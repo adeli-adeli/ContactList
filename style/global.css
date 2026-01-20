@@ -1,0 +1,39 @@
+
+/*reset*/
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-transform: none;
+}
+
+image, video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*Переменные*/
+:root {
+    --font-family-regular: 'Archivo-Regular', sans-serif;
+    --font-family-bold: 'Archivo-bold', sans-serif;
+
+    --container-max-width: 1440px;
+    --container-padding-x: 30px
+
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    padding-inline: clamp(16px, 3vw, 30px);
+    margin: auto;
+}

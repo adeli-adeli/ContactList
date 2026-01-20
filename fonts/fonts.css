@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Archivo-Regular';
+    src: url("Archivo/Archivo-Regular.woff") format("woff"), url("Archivo/Archivo-Regular.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+@font-face {
+    font-family: 'Archivo-Regular';
+    src: url("Archivo/Archivo-Bold.woff") format("woff"), url("Archivo/Archivo-Bold.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 800;
+}
