@@ -6,8 +6,6 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Список контактов и вакансий">
-    <script src="index.js"></script>
-    <script src="js/data.js"></script>
     <link rel="icon" href="image/pineapple-svgrepo-com.svg" type="image/svg+xml" sizes="32x32">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/global.css">
@@ -20,57 +18,39 @@
         Список контактов
     </h1>
 
-    <section class="form-section">
+    <section class="form-section" id="form-section">
 
-        <form class="contact-form">
+        <form class="contact-form" id="contact-form">
             <label class="visually-hidden" for="name">Введите имя</label>
-            <input class="contact-form_input" type="text" name="name" placeholder="Имя" id="name" required>
+            <input class="contact-form_input" type="text" name="name" placeholder="Имя" id="name" required value="">
 
             <label class="visually-hidden" for="vacancy">Должность</label>
-            <input class="contact-form_input" type="text" name="vacancy" placeholder="Должность" id="vacancy" required>
+            <input class="contact-form_input" type="text" name="vacancy" placeholder="Должность" id="vacancy" required
+                   value="">
 
             <label class="visually-hidden" for="telephone">Введите номер телефона</label>
             <input class="contact-form_input" type="tel" name="telephone" placeholder="Номер телефона" id="telephone"
-                   required>
+                   required value="">
 
-            <button type="submit" class="add_button">Добавить</button>
-            <button type="button" class="clear_list">Очистить список</button>
-            <button type="button" class="search_button">Поиск</button>
+            <button type="submit" class=" button add_button" id="addBtn">Добавить</button>
+            <button type="button" class=" button clear_list" id="clearBtn">Очистить список</button>
+            <button type="button" class=" button search_button">Поиск</button>
         </form>
 
     </section>
 
     <section class="content-section container">
-        <ul class="content-section__list">
-            <li class="content-section__item">
-                <p class="">Аделина</p>
-                <p class="">Программист</p>
-                <p class="">+7 999 546 43 32</p>
-            </li>
+        <ul class="content-section__list" id="contact-list">
+
         </ul>
-        <ul class="content-section__list">
-            <li class="content-section__item">
-                <p class="">Аделина</p>
-                <p class="">Программист</p>
-                <p class="">+7 999 546 43 32</p>
-            </li>
-        </ul>
-        <ul class="content-section__list">
-            <li class="content-section__item">
-                <p class="">Аделина</p>
-                <p class="">Программист</p>
-                <p class="">+7 999 546 43 32</p>
-            </li>
-        </ul>
-        <ul class="content-section__list">
-            <li class="content-section__item">
-                <p class="">Аделина</p>
-                <p class="">Программист</p>
-                <p class="">+7 999 546 43 32</p>
-            </li>
-        </ul>
+
+        <!--        <button type="button" class="button_heard ">Сердце</button>-->
+
     </section>
 </main>
+
+<script src="js/data.js"></script>
+<script src="index.js"></script>
 
 </body>
 </html>
