@@ -13,11 +13,10 @@ function renderList() {
     contactList.innerHTML = ""
 
 
-    state.forEach((contact, index) => {
+    state.forEach((contact) => {
 
         const li = document.createElement('li')
         const article = document.createElement('article')
-        const id = document.createElement('h3')
         const name = document.createElement('h3')
         const vacancy = document.createElement('p')
         const phone = document.createElement('p')
@@ -29,14 +28,23 @@ function renderList() {
         deleteBtn.classList.add('delete-button')
 
 
-        id.textContent = contact.id
         name.textContent = contact.name
         vacancy.textContent = contact.vacancy
         phone.textContent = contact.phone
         deleteBtn.textContent = 'Удалить'
 
 
-        article.append(id, name, vacancy, phone, deleteBtn)
+        deleteBtn.addEventListener('click', () => {
+            state = state.filter(item => item.id !== contact.id)
+
+            //обновляем хранилище
+            localStorage.setItem('contacts', JSON.stringify(state))
+
+            //обновляем UI
+            renderList()
+        })
+
+        article.append( name, vacancy, phone, deleteBtn)
         li.appendChild(article)
         contactList.appendChild(li)
     })
@@ -57,13 +65,14 @@ function addContacts(contacts) {
 contactForm.addEventListener('submit', (event) => {
     event.preventDefault()
 
+    const id = Date.now()
     const name = nameInput.value.trim()
     const formattedName = name ? name[0].toUpperCase() + name.slice(1) : ''
     const vacancy = vacancyInput.value.trim()
     const phone = telephoneInput.value.trim()
 
     addContacts({
-        name: formattedName, vacancy, phone,
+        id, name: formattedName, vacancy, phone,
     })
 
 })
