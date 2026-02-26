@@ -31,4 +31,4 @@ const contact = [
     },
 ]
 
-console.log(contact)
+// console.log(contact)
