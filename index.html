@@ -44,9 +44,36 @@
 
         </ul>
 
-        <!--        <button type="button" class="button_heard ">Сердце</button>-->
 
     </section>
+
+
+
+
+    <dialog id="modal">
+
+        <form class="contact-form_rename " id="contact-form-rename">
+            <button type="button" class="close_button contact-cross " id="closeModal"><img src="./image/close.png" alt="" srcset=""></button>
+            <label class="visually-hidden" for="renameName">Введите имя</label>
+            <input class="contact-form_input-rename" type="text" name="renameName" placeholder="Имя" id="renameName"
+                   required value="">
+
+            <label class="visually-hidden" for="renameVacancy">Должность</label>
+            <input class="contact-form_input-rename" type="text" name="renameVacancy" placeholder="Должность"
+                   id="renameVacancy" required
+                   value="">
+
+            <label class="visually-hidden" for="renameTelephone">Введите номер телефона</label>
+            <input class="contact-form_input-rename" type="tel" name="renameTelephone" placeholder="Номер телефона"
+                   id="renameTelephone"
+                   required value="">
+
+            <button type="button" class="button create_button-rename" >Изменить</button>
+
+        </form>
+
+    </dialog>
+
 </main>
 
 <script src="js/data.js"></script>

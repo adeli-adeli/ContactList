@@ -7,7 +7,15 @@ const telephoneInput = document.getElementById('telephone')
 
 const clearBtn = document.getElementById('clearBtn')
 
+let modal = document.getElementById('modal')
+const closeBtn = document.getElementById('closeModal')
+
 let state = JSON.parse(localStorage.getItem('contacts') || '[]')
+
+
+closeBtn.addEventListener('click', () => {
+    modal.close()
+})
 
 function renderList() {
     contactList.innerHTML = ""
@@ -22,16 +30,20 @@ function renderList() {
         const phone = document.createElement('p')
 
         const deleteBtn = document.createElement('button')
+        const createBtn = document.createElement('button')
 
         li.classList.add('contact-item')
         article.classList.add('contact-card')
         deleteBtn.classList.add('delete-button')
+        createBtn.classList.add('create-button')
+        createBtn.setAttribute('id', 'openModal')
 
 
         name.textContent = contact.name
         vacancy.textContent = contact.vacancy
         phone.textContent = contact.phone
         deleteBtn.textContent = 'Удалить'
+        createBtn.textContent = 'Изменить'
 
 
         deleteBtn.addEventListener('click', () => {
@@ -44,7 +56,12 @@ function renderList() {
             renderList()
         })
 
-        article.append( name, vacancy, phone, deleteBtn)
+
+        createBtn.addEventListener('click', () => {
+            modal.showModal()
+        })
+
+        article.append( name, vacancy, phone, deleteBtn, createBtn)
         li.appendChild(article)
         contactList.appendChild(li)
     })
