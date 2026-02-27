@@ -1,21 +1,34 @@
 const contactForm = document.getElementById('contact-form')
+const contactFormRename = document.getElementById('contact-form_rename')
 const contactList = document.getElementById('contact-list')
 
 const nameInput = document.getElementById('name')
 const vacancyInput = document.getElementById('vacancy')
 const telephoneInput = document.getElementById('telephone')
 
+const nameInputRename = document.getElementById('renameName')
+const vacancyInputRename = document.getElementById('renameVacancy')
+const telephoneInputRename = document.getElementById('renameTelephone')
+
 const clearBtn = document.getElementById('clearBtn')
 
 let modal = document.getElementById('modal')
+const closeCrossBtn = document.getElementById('closeModalCross')
 const closeBtn = document.getElementById('closeModal')
 
 let state = JSON.parse(localStorage.getItem('contacts') || '[]')
 
 
-closeBtn.addEventListener('click', () => {
+closeCrossBtn.addEventListener('click', () => {
     modal.close()
 })
+
+closeBtn.addEventListener('click', () => {
+
+    modal.close()
+})
+
+let currentEditId = null
 
 function renderList() {
     contactList.innerHTML = ""
@@ -58,10 +71,11 @@ function renderList() {
 
 
         createBtn.addEventListener('click', () => {
+            currentEditId = contact.id
             modal.showModal()
         })
 
-        article.append( name, vacancy, phone, deleteBtn, createBtn)
+        article.append(name, vacancy, phone, deleteBtn, createBtn)
         li.appendChild(article)
         contactList.appendChild(li)
     })
@@ -91,6 +105,34 @@ contactForm.addEventListener('submit', (event) => {
     addContacts({
         id, name: formattedName, vacancy, phone,
     })
+
+})
+
+
+contactFormRename.addEventListener('submit', (event) => {
+    event.preventDefault()
+
+    const createState = state.map((item) => {
+        if (item.id === currentEditId) {
+            item.name = nameInputRename.value
+            item.vacancy = vacancyInputRename.value
+            item.phone = telephoneInputRename.value
+        } else {
+            console.log('lox')
+        }
+
+        return item
+
+    })
+
+
+
+    localStorage.setItem('contacts', JSON.stringify(createState))
+
+    renderList()
+    contactFormRename.reset()
+
+    console.log('кнопка изменить')
 
 })
 
