@@ -1,186 +1,246 @@
-
 body {
-    font-family: var(--font-family-regular), sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+  font-family: var(--font-family-regular), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .title {
-    font-family: var(--font-family-bold), sans-serif;
-    text-align: center;
-    font-size: 42px;
+  font-family: var(--font-family-bold), sans-serif;
+  text-align: center;
+  font-size: 42px;
 }
 
-
 .form-section {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .contact-form {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .contact-form_input {
-    width: 100%;
-    padding: 10px 13px;
-    font-family: var(--font-family-regular), sans-serif;
-    font-size: 16px;
+  width: 100%;
+  padding: 10px 13px;
+  font-family: var(--font-family-regular), sans-serif;
+  font-size: 16px;
 
+  border: 1px solid #000;
+  border-radius: 10px;
 
-    border: 1px solid #000;
-    border-radius: 10px;
-
-    outline: none;
+  outline: none;
 }
 
 .contact-form_input:focus {
-    border-color: rgba(161, 67, 10, 0.98);
+  border-color: rgba(161, 67, 10, 0.98);
 }
 
 .contact-form_input:hover {
-    transition: 0.2s;
-    background: #c8c7c7;
-    border: 1px solid #c8c7c7;
+  transition: 0.2s;
+  background: #c8c7c7;
+  border: 1px solid #c8c7c7;
 }
 
 .contact-form_input::placeholder {
-    color: #424040;
+  color: #424040;
 }
 
 .button {
-    padding: 10px 20px;
-    border: 1px solid #000;
-    border-radius: 10px;
-    background: none;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  background: none;
 
-    font-family: inherit;
-    font-size: 16px;
-    cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.add_button:hover, .clear_list:hover, .search_button:hover, .create_button:hover, .delete_button:hover {
-    transition: 0.2s;
-    background: #c8c7c7;
-    border: 1px solid #c8c7c7;
+.add_button:hover,
+.clear_list:hover,
+.search_button:hover,
+.create_button:hover,
+.delete_button:hover {
+  transition: 0.2s;
+  background: #c8c7c7;
+  border: 1px solid #c8c7c7;
 }
 
 .content-section__item {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 
 .content-section-text {
-    font-family: var(--font-family-bold), sans-serif;
-    font-size: 16px;
+  font-family: var(--font-family-bold), sans-serif;
+  font-size: 16px;
 }
-
 
 .button_heard {
-    padding: 10px 20px;
-    border: 1px solid #000;
-    border-radius: 10px;
-    background: #000;
-    color: #fff;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
 
-    font-family: inherit;
-    font-size: 16px;
-    cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-
 .active {
-    background: #ff0000;
-    color: #fff;
-    border: 1px solid #ff0000;
+  background: #ff0000;
+  color: #fff;
+  border: 1px solid #ff0000;
 }
 
 .contact-item {
-
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 
 .contact-card {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 24px;
 }
 
-
-.delete-button, .create-button, .create_button-rename {
-    padding: 15px 25px;
-    border: 1px solid #000;
-    border-radius: 10px;
-    background: none;
-    font-family: inherit;
-    font-size: 16px;
+.delete-button,
+.create-button,
+.create_button-rename {
+  padding: 15px 25px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  background: none;
+  font-family: inherit;
+  font-size: 16px;
 }
 
 .contact-form_rename {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 15px;
-    padding: 55px 65px;
-    border: 1px solid #a1b2cf;
-    border-radius: 10px;
-    background-color: #a1b2cf;
-    /*box-shadow: 15px -15px 2px 0 #424040;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  padding: 55px 65px;
+  border: 1px solid #a1b2cf;
+  border-radius: 10px;
+  background-color: #a1b2cf;
+  /*box-shadow: 15px -15px 2px 0 #424040;*/
 }
 
 .contact-form_input-rename {
-    display: flex;
-    justify-content: center;
-    padding: 20px 35px;
-    border-radius: 10px;
-    border: 1px solid #a1b2cf;
-    font-size: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 20px 35px;
+  border-radius: 10px;
+  border: 1px solid #a1b2cf;
+  font-size: 20px;
 }
 
 .contact-form_input-rename:focus {
-    outline: none;
-    border: 1px solid #a1b2cf;
+  outline: none;
+  border: 1px solid #a1b2cf;
 }
 
 .contact-form_input-rename:hover {
-    opacity: 0.8;
-    background-color: #dad8d8;
-    border: 1px solid #dad8d8;
-    transition: 0.2s;
+  opacity: 0.8;
+  background-color: #dad8d8;
+  border: 1px solid #dad8d8;
+  transition: 0.2s;
 }
 
 .contact-form_input-rename:active {
-    opacity: 0.8;
-    background-color: #a1b2cf;
-    border: 1px solid #a1b2cf;
+  opacity: 0.8;
+  background-color: #a1b2cf;
+  border: 1px solid #a1b2cf;
 }
 
 .create_button-rename {
-    border: 1px solid #a1b2cf;
-    background-color: #fff;
+  border: 1px solid #a1b2cf;
+  background-color: #fff;
 }
 
-
-
 .close_button {
-    position: absolute;
-    top: 25px;
-    right: 30px;
-    background: none;
-    border: none;
-    width: 16px;
-    aspect-ratio: 1;
-    cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  background: none;
+  border: none;
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+
+.close_button.search-cross {
+  top: 15px;
+  right: 10px;
 }
 
 dialog {
-    border: none;
-    background: none;
+  border: none;
+  background: none;
 }
 
 dialog::backdrop {
+  border: none;
+  outline: none;
+}
+
+.dialog-modal {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    background-color: #a1b2cf;
+    border-radius: 10px;
     border: none;
+}
+
+
+
+.search_input-modal {
+  width: 100%;
+  padding: 16px 110px 16px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.search_button-modal {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+}
+
+.dialog-modal::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal:focus {
+  outline: none;
+  border: 1px solid #424040;
+}
+
+.search-card {
+  display: flex;
+  gap: 15px;
+}
+
+.search-text {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 16px;
+  font-family: 'Roboto';
 }
