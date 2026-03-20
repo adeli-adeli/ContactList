@@ -1,83 +1,171 @@
 <!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Список контактов и вакансий">
-    <link rel="icon" href="image/pineapple-svgrepo-com.svg" type="image/svg+xml" sizes="32x32">
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/global.css">
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Список контактов и вакансий" />
+    <link
+      rel="icon"
+      href="image/pineapple-svgrepo-com.svg"
+      type="image/svg+xml"
+      sizes="32x32"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/global.css" />
     <title>Contact List</title>
-</head>
-<body>
-<main class="wrapper container">
+  </head>
+  <body>
+    <main class="wrapper container">
+      <h1 class="title">Список контактов</h1>
 
-    <h1 class="title">
-        Список контактов
-    </h1>
-
-    <section class="form-section" id="form-section">
-
+      <section class="form-section" id="form-section">
         <form class="contact-form" id="contact-form">
-            <label class="visually-hidden" for="name">Введите имя</label>
-            <input class="contact-form_input" type="text" name="name" placeholder="Имя" id="name" required value="">
+          <label class="visually-hidden" for="name">Введите имя</label>
+          <input
+            class="contact-form_input"
+            type="text"
+            name="name"
+            placeholder="Имя"
+            id="name"
+            required
+            value=""
+          />
 
-            <label class="visually-hidden" for="vacancy">Должность</label>
-            <input class="contact-form_input" type="text" name="vacancy" placeholder="Должность" id="vacancy" required
-                   value="">
+          <label class="visually-hidden" for="vacancy">Должность</label>
+          <input
+            class="contact-form_input"
+            type="text"
+            name="vacancy"
+            placeholder="Должность"
+            id="vacancy"
+            required
+            value=""
+          />
 
-            <label class="visually-hidden" for="telephone">Введите номер телефона</label>
-            <input class="contact-form_input" type="tel" name="telephone" placeholder="Номер телефона" id="telephone"
-                   required value="">
+          <label class="visually-hidden" for="telephone"
+            >Введите номер телефона</label
+          >
+          <input
+            class="contact-form_input"
+            type="tel"
+            name="telephone"
+            placeholder="Номер телефона"
+            id="telephone"
+            required
+            value=""
+          />
 
-            <button type="submit" class=" button add_button" id="addBtn">Добавить</button>
-            <button type="button" class=" button clear_list" id="clearBtn">Очистить список</button>
-            <button type="button" class=" button search_button">Поиск</button>
+          <button type="submit" class="button add_button" id="addBtn">
+            Добавить
+          </button>
+          <button type="button" class="button clear_list" id="clearBtn">
+            Очистить список
+          </button>
+          <button type="button" class="button search_button" id="searchBtn">
+            Поиск
+          </button>
+        </form>
+      </section>
+
+      <section class="content-section container">
+        <ul class="content-section__list" id="contact-list"></ul>
+      </section>
+
+      <dialog id="create-modal" class="dialog-modal">
+        <form class="contact-form_rename modal" id="contact-form_rename">
+          <button
+            type="button"
+            class="close_button contact-cross modal"
+            id="closeModalCross"
+          >
+            <img src="./image/close.png" alt="Закрыть" />
+          </button>
+          <label class="visually-hidden" for="renameName">Введите имя</label>
+          <input
+            class="contact-form_input-rename modal"
+            type="text"
+            name="renameName"
+            placeholder="Имя"
+            id="renameName"
+            required
+            value=""
+          />
+
+          <label class="visually-hidden" for="renameVacancy">Должность</label>
+          <input
+            class="contact-form_input-rename modal"
+            type="text"
+            name="renameVacancy"
+            placeholder="Должность"
+            id="renameVacancy"
+            required
+            value=""
+          />
+
+          <label class="visually-hidden" for="renameTelephone"
+            >Введите номер телефона</label
+          >
+          <input
+            class="contact-form_input-rename modal"
+            type="tel"
+            name="renameTelephone"
+            placeholder="Номер телефона"
+            id="renameTelephone"
+            required
+            value=""
+          />
+
+          <button
+            type="submit"
+            class="button create_button-rename modal"
+            id="closeModal"
+          >
+            Изменить
+          </button>
+        </form>
+      </dialog>
+
+      <dialog id="search-modal" class="dialog-modal">
+        <form class="search-form" id="search-form_modal">
+          <button
+            type="button"
+            class="close_button search-cross modal"
+            id="closeModalCrossSearch"
+          >
+            <img src="./image/close.png" alt="Закрыть" />
+          </button>
+
+          <div class="search-box">
+            <label class="visually-hidden" for="search_input">Поиск</label>
+            <input
+              class="search_input-modal modal"
+              type="text"
+              name="search"
+              placeholder="Поиск контактов"
+              id="search-input"
+              autocomplete="off"
+              required
+              value=""
+            />
+
+            <button
+              type="submit"
+              class="button search_button-modal modal"
+              id="search-button"
+            >
+              Поиск
+            </button>
+          </div>
         </form>
 
-    </section>
+        <ul class="search-list" id="search-list" aria-live="polite"></ul>
+      </dialog>
+    </main>
 
-    <section class="content-section container">
-        <ul class="content-section__list" id="contact-list">
-
-        </ul>
-
-
-    </section>
-
-
-
-
-    <dialog id="modal">
-
-        <form class="contact-form_rename " id="contact-form_rename">
-            <button type="button" class="close_button contact-cross " id="closeModalCross"><img src="./image/close.png" alt="" srcset=""></button>
-            <label class="visually-hidden" for="renameName">Введите имя</label>
-            <input class="contact-form_input-rename" type="text" name="renameName" placeholder="Имя" id="renameName"
-                   required value="">
-
-            <label class="visually-hidden" for="renameVacancy">Должность</label>
-            <input class="contact-form_input-rename" type="text" name="renameVacancy" placeholder="Должность"
-                   id="renameVacancy" required
-                   value="">
-
-            <label class="visually-hidden" for="renameTelephone">Введите номер телефона</label>
-            <input class="contact-form_input-rename" type="tel" name="renameTelephone" placeholder="Номер телефона"
-                   id="renameTelephone"
-                   required value="">
-
-            <button type="submit" class="button create_button-rename" id="closeModal" >Изменить</button>
-
-        </form>
-
-    </dialog>
-
-</main>
-
-<script src="js/data.js"></script>
-<script src="index.js"></script>
-
-</body>
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>
